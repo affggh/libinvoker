@@ -17,6 +17,14 @@
 #define _FILE_OFFSET_BITS 64
 #define _LARGEFILE64_SOURCE 1
 
+// Modified by affggh
+// Fix compile error
+#ifdef __CYGWIN__
+#define off64_t off_t
+#define lseek64 lseek
+#endif
+// End modified
+
 #include <fcntl.h>
 #include <stdbool.h>
 #include <stdio.h>

@@ -33,12 +33,16 @@
 #include "output_file.h"
 #include "sparse_crc32.h"
 #include "sparse_format.h"
-#ifndef USE_MINGW
+// Modefied by affggh
+//#ifndef USE_MINGW
+#ifndef __CYGWIN__
 #include <sys/mman.h>
 #define O_BINARY 0
 #else
+#include <sys/mman.h>
 #define ftruncate64 ftruncate
 #endif
+// End modified
 
 //#if defined(__APPLE__) && defined(__MACH__)
 #define lseek64 lseek

@@ -18,6 +18,13 @@
 #define _FILE_OFFSET_BITS 64
 #define _LARGEFILE64_SOURCE 1
 
+// Modified by affggh
+#ifdef __CYGWIN__
+#define lseek64 lseek
+#define off64_t off_t
+#endif
+// End modified
+
 #include <inttypes.h>
 #include <fcntl.h>
 #include <stdarg.h>
